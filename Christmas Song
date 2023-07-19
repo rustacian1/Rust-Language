@@ -1,0 +1,29 @@
+fn main() {
+    let lyric=[
+        "A Patridge in a pear Tree",
+        "Two Turtle Doves, And",
+        "Three French Hens",
+        "Four Calling Birds",
+        "Five Golden Rings",
+        "Siz Geese-a-laying",
+        "Seven Swans-a-swiming",
+        "Eight Maids-a-mailking",
+        "Nine Ladies Dancing",
+        "Ten Lords-a-leaping",
+        "Eleven Pipers Piping",
+        "Twelve Drummer Drumming"
+    ];
+    for day in 0..lyric.len(){
+        let suffix= match day+1{
+            1 => "st",
+            2 => "nd",
+            3=> "rd",
+            _ => "th"
+        };
+
+        println!("\nOn the {}{} day of Cristmas, my True Love sent to me",day+1,suffix);
+        for elements in (0..day+1).rev(){
+            println!("\n{}",lyric[elements]);
+        }
+    }
+}
